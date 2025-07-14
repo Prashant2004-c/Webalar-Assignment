@@ -73,7 +73,7 @@ To run this project locally, follow these steps:
     ```bash
     npm run dev
     ```
-    The frontend application will typically open in your browser at `http://localhost:5000` or a similar address.
+    The frontend application will typically open in your browser at `http://localhost:5173` or a similar address.
 
 ## Features and Usage Guide
 
