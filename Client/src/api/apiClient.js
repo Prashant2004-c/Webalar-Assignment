@@ -1,9 +1,10 @@
 import axios from 'axios';
 
-const baseURL = import.meta.env.VITE_API_URL;
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5050/api'; 
 
 const apiClient = axios.create({
-  baseURL: baseURL, 
+  baseURL: API_BASE_URL,
+  withCredentials: true, 
 });
 
 
@@ -35,7 +36,6 @@ apiClient.interceptors.response.use(
    
       localStorage.removeItem('user');
       localStorage.removeItem('token');
-      // Redirect to login page
       window.location.href = '/login';
 
       return Promise.reject(error);
