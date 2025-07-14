@@ -109,5 +109,5 @@ The application implements optimistic concurrency control to handle potential co
 This approach prevents lost updates by ensuring that modifications are only applied to the most recent version of a task.
 
 ## Link to Deployed Live App and Demo Video
-*   **Live App:** [Link to your deployed application] (Placeholder)
+*   **Live App:** [https://webalar-assignment-hr2u.vercel.app](https://webalar-assignment-hr2u.vercel.app)
 *   **Demo Video:** [Link to your demo video] (Placeholder) 
