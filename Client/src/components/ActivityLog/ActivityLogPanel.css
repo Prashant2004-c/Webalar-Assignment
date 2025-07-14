@@ -1,0 +1,111 @@
+.activity-log-panel {
+  background-color: var(--card-bg-color);
+  border-radius: var(--border-radius-large);
+  /* Larger border radius */
+  box-shadow: var(--shadow-medium);
+  /* Stronger shadow */
+  padding: var(--spacing-large);
+  margin: var(--spacing-large) auto;
+  /* Center the panel */
+  max-width: 800px;
+  /* Max width for readability */
+  color: var(--text-color);
+  transition: all 0.3s ease-in-out;
+}
+
+.activity-log-panel h3 {
+  color: var(--primary-color);
+  /* Use primary color for heading */
+  font-size: 1.8em;
+  /* Larger heading */
+  margin-bottom: var(--spacing-medium);
+  border-bottom: 2px solid var(--border-color);
+  /* Thicker border */
+  padding-bottom: var(--spacing-small);
+  text-align: center;
+  /* Center heading */
+  font-weight: 700;
+}
+
+.activity-log-panel .error {
+  color: var(--accent-color);
+  background-color: rgba(231, 76, 60, 0.1);
+  border: 1px solid var(--accent-color);
+  padding: var(--spacing-medium);
+  border-radius: var(--border-radius-medium);
+}
+
+.activity-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.activity-item {
+  background-color: var(--color-background-light);
+  border-bottom: 1px solid var(--color-border);
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: column;
+  /* Arrange timestamp and details vertically */
+  gap: 5px;
+  /* Space between timestamp and details */
+  font-size: 0.9em;
+}
+
+.activity-item:last-child {
+  border-bottom: none;
+}
+
+.activity-item strong {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.timestamp {
+  color: var(--color-text-secondary);
+  font-size: 0.8em;
+  white-space: nowrap;
+  /* Prevent timestamp from wrapping */
+}
+
+.details {
+  color: var(--color-text-primary);
+  line-height: 1.4;
+}
+
+.highlight {
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.old-value {
+  color: var(--color-text-secondary);
+  text-decoration: line-through;
+}
+
+.new-value {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .activity-log-panel {
+    padding: var(--spacing-medium);
+    margin: var(--spacing-medium) auto;
+  }
+
+  .activity-log-panel h3 {
+    font-size: 1.5em;
+  }
+
+  .activity-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .activity-item .timestamp {
+    margin-bottom: var(--spacing-xs);
+  }
+}

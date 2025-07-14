@@ -1,0 +1,144 @@
+.kanban-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* Three columns */
+  gap: var(--spacing-medium);
+  margin-top: var(--spacing-large);
+}
+
+.kanban-column {
+  min-height: 400px;
+  /* Ensure columns have a minimum height */
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f9fa;
+  /* Lighter background for columns */
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-medium);
+  padding: var(--spacing-medium);
+  box-shadow: var(--shadow-light);
+}
+
+.kanban-column-title {
+  font-size: var(--font-size-medium);
+  color: var(--text-color);
+  text-align: center;
+  margin-bottom: var(--spacing-medium);
+  padding-bottom: var(--spacing-small);
+  border-bottom: 1px solid var(--border-color);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.task-list {
+  flex-grow: 1;
+  min-height: 100px;
+  /* Allow space for dragging */
+  padding: var(--spacing-xs);
+}
+
+.task-card {
+  background-color: var(--card-bg-color);
+  border-radius: var(--border-radius-medium);
+  padding: var(--spacing-medium);
+  margin-bottom: var(--spacing-small);
+  box-shadow: var(--shadow-light);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  cursor: grab;
+  position: relative;
+  /* For animations if needed */
+}
+
+.task-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-medium);
+}
+
+.task-card-title {
+  font-size: var(--font-size-medium);
+  font-weight: 600;
+  margin-bottom: var(--spacing-xs);
+  color: var(--primary-color);
+}
+
+.task-card-description {
+  font-size: var(--font-size-small);
+  color: #555;
+  margin-bottom: var(--spacing-small);
+}
+
+.priority-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: var(--border-radius-small);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: var(--spacing-xs);
+}
+
+.priority-badge.low {
+  background-color: #e0f2f7;
+  color: #2196f3;
+  /* Light Blue */
+}
+
+.priority-badge.medium {
+  background-color: #fff8e1;
+  color: #ffc107;
+  /* Amber */
+}
+
+.priority-badge.high {
+  background-color: #ffebee;
+  color: #f44336;
+  /* Red */
+}
+
+.task-assigned-to {
+  font-size: var(--font-size-small);
+  color: #777;
+  margin-top: var(--spacing-small);
+  padding-top: var(--spacing-small);
+  border-top: 1px dashed var(--border-color);
+}
+
+.task-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-small);
+  margin-top: var(--spacing-medium);
+}
+
+.task-card-actions .btn-sm {
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
+/* Dragging styles (for @hello-pangea/dnd) */
+.task-card.is-dragging {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: rotate(2deg);
+  /* Small rotation for visual effect */
+}
+
+.kanban-column.is-dragging-over {
+  background-color: rgba(52, 152, 219, 0.1);
+  /* Light primary color overlay */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .kanban-board {
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columns on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .kanban-board {
+    grid-template-columns: 1fr;
+    /* Single column on small screens */
+  }
+}
