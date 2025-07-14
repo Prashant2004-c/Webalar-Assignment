@@ -1,5 +1,5 @@
 const express = require("express");
-const { check } = require("express-validator");
+const { check, body } = require("express-validator"); // Import body
 const {
   createTask,
   getTask,
@@ -18,8 +18,8 @@ router.get("/", getTasks);
 router.post(
   "/",
   [
-    check("title", "Title is required").not().isEmpty(),
-    check("title", "Title cannot exceed 100 characters").isLength({ max: 100 }),
+    body("title", "Title is required").not().isEmpty(), // Use body()
+    body("title", "Title cannot exceed 100 characters").isLength({ max: 100 }), // Use body()
   ],
   createTask
 );
@@ -28,13 +28,13 @@ router.get("/:id", getTask);
 router.put(
   "/:id",
   [
-    check("title", "Title cannot exceed 100 characters")
+    body("title", "Title cannot exceed 100 characters") // Use body()
       .optional()
       .isLength({ max: 100 }),
-    check("description", "Description cannot exceed 500 characters")
+    body("description", "Description cannot exceed 500 characters") // Use body()
       .optional()
       .isLength({ max: 500 }),
-    check("priority", "Priority must be Low, Medium, or High")
+    body("priority", "Priority must be Low, Medium, or High") // Use body()
       .optional()
       .isIn(["Low", "Medium", "High"]),
   ],

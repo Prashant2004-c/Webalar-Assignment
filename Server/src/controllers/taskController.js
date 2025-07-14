@@ -142,8 +142,13 @@ async function getTask(req, res) {
 }
 
 async function updateTask(req, res) {
+  // Log raw request body and headers *before* validation
+  console.log('UPDATE TASK - Raw Request Body:', req.body);
+  console.log('UPDATE TASK - Raw Request Headers:', req.headers);
+
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
+    console.log('UPDATE TASK - Validation Errors:', errors.array()); // Log validation errors
     return res.status(400).json({
       success: false,
       errors: errors.array(),
