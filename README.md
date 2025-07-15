@@ -110,4 +110,4 @@ This approach prevents lost updates by ensuring that modifications are only appl
 
 ## Link to Deployed Live App and Demo Video
 *   **Live App:** [https://webalar-assignment-hr2u.vercel.app](https://webalar-assignment-hr2u.vercel.app)
-*   **Demo Video:** [Link to your demo video] (Placeholder) 
+*   **Demo Video:** https://drive.google.com/file/d/1ghL4QyCIXIuoAzsnOL0CZTeDvjuP30w9/view?usp=sharing
